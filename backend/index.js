@@ -24,8 +24,9 @@ const projectRouter = require('./routes/projects');
 
 app.use('/projects', projectRouter);
 
+const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
 
 
-app.listen(5000, function () {
-  console.log("app listening on port 5000!");
+app.listen(port, function () {
+  console.log("app listening on port !"+ port);
 });
